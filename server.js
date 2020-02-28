@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const requireDir = require("requiredir")
-
-
+const cors = require('cors')
+const requireDir = require("requiredir");
 
 //iniciando app
 const app = express();
+app.use(express.json())
+app.use(cors())
 
 //Iniciando DB
 mongoose.connect("mongodb://localhost:27017/nodeapi", {
